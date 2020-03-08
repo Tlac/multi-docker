@@ -3,25 +3,26 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image:": "tlac/multi-client",
+      "image": "tlac/multi-client",
       "hostname": "client",
       "essential": false
     },
     {
       "name": "server",
-      "image:": "tlac/multi-server",
+      "image": "tlac/multi-server",
       "hostname": "api",
       "essential": false
     },
     {
       "name": "worker",
-      "image:": "tlac/multi-worker",
+      "image": "tlac/multi-worker",
       "hostname": "worker",
       "essential": false
     },
     {
       "name": "nginx",
-      "image:": "tlac/multi-nginx",
+      "image": "tlac/multi-nginx",
+      "hostname": "nginx",
       "essential": true,
       "portMappings": [
         {
@@ -29,7 +30,7 @@
           "containerPort": 80
         }
       ],
-      "links": ["client", "server"]
+      "links": ["client", "server"],
     }
   ]
 }
